@@ -5,12 +5,12 @@ package main
 import "fmt"
 
 func main() {
-	var c int
+	var count int
 
 	for i := 1; i < 1000; i++ {
 		if i%3 == 0 || i%5 == 0 {
-			c = c + i
+			count = count + i
 		}
 	}
-	fmt.Println(c) // 233168
+	fmt.Println(count) // 233168
 }
