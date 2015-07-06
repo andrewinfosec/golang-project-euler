@@ -4,7 +4,7 @@
 By Andrew Stewart ([http://andrewinfosec.com](http://andrewinfosec.com))
 
 This repository contains my solutions to various
-[Project Euler](https://en.wikipedia.org/wiki/Project_Euler) using
+[Project Euler](https://en.wikipedia.org/wiki/Project_Euler) problems using
 [Go](http://golang.org).
 
 #### Current population
