@@ -38,10 +38,10 @@ func main() {
 	for i, v := range list {
 		if v == true {
 			c++
-         if c == 10001 {
-            fmt.Println(i) // 104743
-            break
-         }
+			if c == 10001 {
+				fmt.Println(i) // 104743
+				break
+			}
 		}
 	}
 }
