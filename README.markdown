@@ -15,4 +15,5 @@ This repository contains my solutions to various
 4. [Largest palindrome product](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/04.go) (added 07/12/15)
 5. [Smallest multiple](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/05.go) (added 07/12/15)
 6. [Sum square difference](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/06.go) (added 07/12/15)
+7. [10001st prime](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/07.go) (added 07/13/15)
 
