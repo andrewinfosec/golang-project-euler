@@ -16,4 +16,5 @@ This repository contains my solutions to various
 5. [Smallest multiple](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/05.go)
 6. [Sum square difference](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/06.go)
 7. [10001st prime](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/07.go)
+8. [Largest product in a series](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/08.go)
 
