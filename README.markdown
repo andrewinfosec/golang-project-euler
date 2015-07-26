@@ -19,4 +19,5 @@ This repository contains my solutions to various
 8. [Largest product in a series](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/08.go)
 9. [Special Pythagorean triplet](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/09.go)
 10. [Summation of primes](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/10.go)
+11. [Largest product in a grid](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/11.go)
 
