@@ -10,68 +10,7 @@ import (
 )
 
 var (
-	slice []int
-)
-
-func productLeft(i int) int {
-	if i-3 < 0 {
-		return 0
-	}
-	return slice[i] * slice[i-1] * slice[i-2] * slice[i-3]
-}
-
-func productRight(i int) int {
-	if i+3 > len(slice)-1 {
-		return 0
-	}
-	return slice[i] * slice[i+1] * slice[i+2] * slice[i+3]
-}
-
-func productUp(i int) int {
-	if i-60 < 0 {
-		return 0
-	}
-	return slice[i] * slice[i-20] * slice[i-40] * slice[i-60]
-}
-
-func productDown(i int) int {
-	if i+60 > len(slice)-1 {
-		return 0
-	}
-	return slice[i] * slice[i+20] * slice[i+40] * slice[i+60]
-}
-
-func productDiagonals(i int) int {
-	var answers []int
-
-	// north west
-	if i-60-3 > 0 {
-		answers = append(answers, slice[i]*slice[i-20-1]*slice[i-40-2]*slice[i-60-3])
-	}
-	// north east
-	if i-60+3 > 0 {
-		answers = append(answers, slice[i]*slice[i-20+1]*slice[i-40+2]*slice[i-60+3])
-	}
-	// south west
-	if i+60-3 < len(slice)-1 {
-		answers = append(answers, slice[i]*slice[i+20-1]*slice[i+40-2]*slice[i+60-3])
-	}
-	// south east
-	if i+60+3 < len(slice)-1 {
-		answers = append(answers, slice[i]*slice[i+20+1]*slice[i+40+2]*slice[i+60+3])
-	}
-
-	var highest int
-	for _, v := range answers {
-		if v > highest {
-			highest = v
-		}
-	}
-	return highest
-}
-
-func main() {
-	var data []string = []string{
+	data []string = []string{
 		"08 02 22 97 38 15 00 40 00 75 04 05 07 78 52 12 50 77 91 08",
 		"49 49 99 40 17 81 18 57 60 87 17 40 98 43 69 48 04 56 62 00",
 		"81 49 31 73 55 79 14 29 93 71 40 67 53 88 30 03 49 13 36 65",
@@ -93,8 +32,12 @@ func main() {
 		"20 73 35 29 78 31 90 01 74 31 49 71 48 86 81 16 23 57 05 54",
 		"01 70 54 71 83 51 54 69 16 92 33 48 61 43 52 01 89 19 67 48",
 	}
+	slice []int
+)
 
+func init() {
 	var s string
+
 	for _, v := range data {
 		s += " " + v
 	}
@@ -107,24 +50,48 @@ func main() {
 		}
 		slice = append(slice, i)
 	}
+}
 
-	largest := 0
-	for i := 0; i < len(slice); i++ {
-		if v := productLeft(i); v > largest {
-			largest = v
+func directions(i int) [][]int {
+	const row = 20
+	return [][]int{
+		{i, i - 1, i - 2, i - 3},                                     // backwards
+		{i, i + 1, i + 2, i + 3},                                     // forwards
+		{i, i - (row * 1), i - (row * 2), i - (row * 3)},             // up
+		{i, i + (row * 1), i + (row * 2), i + (row * 3)},             // down
+		{i, i - (row * 1) - 1, i - (row * 2) - 2, i - (row * 3) - 3}, // diagonal north west
+		{i, i - (row * 1) + 1, i - (row * 2) + 2, i - (row * 3) + 3}, // diagonal north east
+		{i, i + (row * 1) - 1, i + (row * 2) - 2, i + (row * 3) - 3}, // diagonal south west
+		{i, i + (row * 1) + 1, i + (row * 2) + 2, i + (row * 3) + 3}, // diagonal south east
+	}
+}
+
+func highScore(i int) int {
+	var largest int = 0
+
+Direction:
+	for _, direction := range directions(i) {
+		// [0 -1 -2 -3] // backwards
+		score := 1
+		for _, offset := range direction {
+			if i+offset < 0 || i+offset > len(slice)-1 {
+				continue Direction
+			}
+			score = score * slice[i+offset]
 		}
-		if v := productRight(i); v > largest {
-			largest = v
+		if score > largest {
+			largest = score
 		}
-		if v := productUp(i); v > largest {
-			largest = v
-		}
-		if v := productDown(i); v > largest {
-			largest = v
-		}
-		if v := productDiagonals(i); v > largest {
+	}
+	return largest
+}
+
+func main() {
+	var largest int = 0
+	for i, _ := range slice {
+		if v := highScore(i); v > largest {
 			largest = v
 		}
 	}
-	fmt.Println(largest) // 70600674
+	fmt.Println(largest)
 }
