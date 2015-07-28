@@ -36,19 +36,14 @@ var (
 )
 
 func init() {
-	var s string
-
-	for _, v := range data {
-		s += " " + v
-	}
-	s = strings.TrimSpace(s)
-
-	for _, v := range strings.Split(s, " ") {
-		i, err := strconv.Atoi(v)
-		if err != nil {
-			log.Fatal(err)
+	for _, row := range data {
+		for _, v := range strings.Split(row, " ") {
+			i, err := strconv.Atoi(v)
+			if err != nil {
+				log.Fatal(err)
+			}
+			slice = append(slice, i)
 		}
-		slice = append(slice, i)
 	}
 }
 
@@ -71,10 +66,9 @@ func highScore(i int) int {
 
 Direction:
 	for _, direction := range directions(i) {
-		// [0 -1 -2 -3] // backwards
 		score := 1
 		for _, offset := range direction {
-			if i+offset < 0 || i+offset > len(slice)-1 {
+			if i+offset < 0 || i+offset > len(slice)-1 { // x+-y == x-y
 				continue Direction
 			}
 			score = score * slice[i+offset]
