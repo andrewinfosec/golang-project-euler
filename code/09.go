@@ -12,7 +12,6 @@ func isTriplet(a, b, c int) bool {
 
 // a^2 + b^2 = c^2 therefore a + b > c; a + b + c = 1000 therefore c <= 500
 func main() {
-
 Loop:
 	for a := 1; a < 1000; a++ {
 		for b := 1; b < 1000; b++ {

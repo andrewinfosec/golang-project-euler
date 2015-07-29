@@ -68,10 +68,10 @@ Direction:
 	for _, direction := range directions(i) {
 		score := 1
 		for _, offset := range direction {
-			if i+offset < 0 || i+offset > len(slice)-1 { // x+-y == x-y
+			if i+offset < 0 || i+offset > len(slice)-1 {
 				continue Direction
 			}
-			score = score * slice[i+offset]
+			score = score * slice[i+offset] // x+-y == x-y
 		}
 		if score > largest {
 			largest = score
