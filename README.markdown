@@ -21,5 +21,6 @@ This repository contains my solutions to various
 10. [Summation of primes](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/10.go) (Sieve of Eratosthenes)
 11. [Largest product in a grid](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/11.go)
 12. [Highly divisible triangular number](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/12.go)
-12. [Large sum](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/13.go)
+13. [Large sum](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/13.go)
+14. [Longest Collatz sequence](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/14.go) (Collatz conjecture)
 
