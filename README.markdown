@@ -24,4 +24,4 @@ This repository contains my solutions to various
 13. [Large sum](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/13.go)
 14. [Longest Collatz sequence](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/14.go) (Collatz conjecture)
 15. [Lattice paths](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/15.go) (Binomial coefficient)
-
+15. [Power digit sum](https://github.com/andrewinfosec/golang-project-euler/blob/master/code/16.go)
