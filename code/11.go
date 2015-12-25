@@ -87,5 +87,5 @@ func main() {
 			largest = v
 		}
 	}
-	fmt.Println(largest)
+	fmt.Println(largest) // 70600674
 }
