@@ -1,5 +1,5 @@
 
-### golang-project-euler: Project Euler problems solved in Go/golang
+### golang-project-euler: Project Euler problems solved in Go
 
 By Andrew Stewart ([http://andrewinfosec.com](http://andrewinfosec.com))
 
