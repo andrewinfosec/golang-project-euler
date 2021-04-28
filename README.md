@@ -1,7 +1,7 @@
 
 ### golang-project-euler: Project Euler problems solved in Go
 
-By Andrew Stewart ([http://andrewinfosec.com](http://andrewinfosec.com))
+By Andrew Stewart ([https://andrewinfosec.com](https://andrewinfosec.com))
 
 This repository contains my solutions to various
 [Project Euler](https://en.wikipedia.org/wiki/Project_Euler) problems using
